@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+@import url(https://fonts.googleapis.com/css?family=Muli:400,300italic,300,400italic);
+body,
+html {
+  margin: 0;
+  font-family: muli;
+  height: 100%;
+  padding: 0;
+  overflow-x:hidden;
+}
+
+
+.container {
+  display: block;
+  height: 100%;
+  width: 920px;
+  background: rgb(255, 255, 255);
+  margin: auto;
+  flex-shrink: 1;
+  flex-grow: 1;
+ 
+}
+
+.toolbar {
+  width: 100%;
+  display: flex;
+  height: 7vh;
+  justify-content: top;
+  align-items: center;
+  background: rgb(255, 255, 255);
+  flex-shrink: 1;
+  flex-grow: 1;
+  padding: 20px 0;
+
+}
+
+button {
+    background:rgb(255, 255, 255);
+    border:solid 2px rgb(43, 42, 42);
+    font-weight: 26;
+    height:25px;
+    margin:3px;
+    padding: 0 25px;
+    color:rgb(56, 56, 56);
+    cursor:pointer;
+  }
+  button:hover {
+    background:rgb(43, 42, 42);
+    color:rgb(255, 255, 255);
+  }
+
+.projects {
+  width: 100%;
+  max-height: 1700px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  flex-direction: column;
+  flex-shrink: 1;
+  }
+
+.project {
+  background-color: blueviolet;
+  width: 300px;
+  height: auto;
+  display: flex;
+  flex-shrink: 1;
+  margin-bottom: 10px;
+  }
+
+
