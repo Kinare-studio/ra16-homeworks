@@ -53,6 +53,10 @@ button {
     background:rgb(43, 42, 42);
     color:rgb(255, 255, 255);
   }
+  button:onClick {
+    background-color: rgb(43, 42, 42);
+    color: rgb(255, 255, 255);
+  }
 
 .projects {
   width: 100%;
