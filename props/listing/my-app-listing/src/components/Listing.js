@@ -15,7 +15,7 @@ export default function Listing({ items }) {
                     <div className="item-details">
                         <p className="item-title">{item.title ? item.title.length > 50 ? item.title.slice(0, 49) + '...' : item.title : null}</p>
                         <p className="item-price">{item.currency_code === "USD" ? '$' + item.price : item.currency_code === "EUR" ? '€' + item.price : item.price + item.currency_code ? item.price + item.currency_code : null}</p>
-                        <p className={arr ? arr.join(" ") : null}>{item.quantity ? item.quantity : null}</p>
+                        <p className={arr ? arr.join(" ") : null}>{item.quantity ? item.quantity + ' left' : null}</p>
                     </div>
                 </div>
             )
