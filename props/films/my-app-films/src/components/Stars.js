@@ -1,10 +1,9 @@
 import Star from "./Star"
 import React from 'react';
 import PropTypes from 'prop-types';
-import StarsModel from '../models/StarsModel';
+
 
 export default function Stars({ count }) {
-
 
     if (count < 1 || count > 5 || typeof count !== 'number') {
         return (
@@ -19,9 +18,6 @@ export default function Stars({ count }) {
     }
 }
 
-Stars.propTypes = {
-    count: PropTypes.instanceOf(StarsModel).isRequired
-}
 Stars.propTypes = {
     count: PropTypes.number
 }

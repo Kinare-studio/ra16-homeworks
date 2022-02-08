@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import StarModel from '../models/StarModel';
+
 
 export default function Star({ count }) {
-
 
     return (
         [...Array(count).keys()].map((index) => {
@@ -19,9 +18,7 @@ export default function Star({ count }) {
     )
 }
 
-Star.propTypes = {
-    count: PropTypes.instanceOf(StarModel).isRequired
-}
+
 Star.propTypes = {
     count: PropTypes.number
 }
