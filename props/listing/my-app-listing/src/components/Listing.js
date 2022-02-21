@@ -6,7 +6,7 @@ export default function Listing({ items }) {
             console.log(item);
             const arr = item.quantity ? [item.quantity <= 10 ? "level-low" : item.quantity <= 20 ? "level-medium" : "level-high", "item-quantity"] : null;
             return (
-                <div className={item.error_messages || item.state === "removed" ? "item.hidden" : "item"} key={item.listing_id ? item.listing_id : null}>
+                <div className={item.error_messages || item.state === "removed" ? "item-hidden" : "item"} key={item.listing_id ? item.listing_id : null}>
                     <div className="item-image">
                         <a href={item.url ? item.url : null}>
                             <img src={item?.MainImage?.url_570xN ? item.MainImage.url_570xN : null} alt={item.title ? item.title : null} />

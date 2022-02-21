@@ -115,8 +115,8 @@ top:5px;
   width:100%;
 }
 
-.item.hidden {
-  visibility:hidden;
+.item-hidden {
+  display: none;
 }
 
 .item-image {
