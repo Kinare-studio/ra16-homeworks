@@ -1,5 +1,6 @@
 import React from "react";
-import '../css/main.css'
+import '../css/main.css';
+
 
 
 export default function TrainingsList({ trainings, handleRemove }) {
