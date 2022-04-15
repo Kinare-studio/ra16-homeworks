@@ -7,19 +7,26 @@ export default function TrainingsAddForm(props) {
     const { onAdd } = props;
     const [form, setForm] = useState({
         date: '',
-        km: '',
+        km: Number(''),
     });
 
 
     const handleChange = evt => {
         const { name, value } = evt.target;
-        setForm(prevForm => ({ ...prevForm, [name]: value }));
+        setForm(prevForm =>
+            ({ ...prevForm, [name]: value}));
     }
+
+    /*function componetDidUpdate(oldProps, oldState) {
+        console.log(
+            {oldProps, oldState}
+        )
+    }*/
 
     const handleSubmit = evt => {
         evt.preventDefault();
         const training = new TrainingsModel(uuidv4(), form.date, form.km);
-        onAdd(training);
+        onAdd(training)
         setForm({
             date: '',
             km: '',
@@ -38,7 +45,8 @@ export default function TrainingsAddForm(props) {
                         type='date'
                         className='inputDate'
                         value={form.date}
-                        onChange={handleChange} />
+                        onChange={handleChange}
+                        required />
                 </label>
 
                 <label htmlFor='km'>Пройдено км
@@ -46,9 +54,12 @@ export default function TrainingsAddForm(props) {
                         id='km'
                         name='km'
                         type='number'
+                        min={0}
                         className='inputNumber'
                         value={form.km}
-                        onChange={handleChange} />
+                        onChange={handleChange}
+                        required
+                    />
                 </label>
 
                 <button className='button'>OK</button>

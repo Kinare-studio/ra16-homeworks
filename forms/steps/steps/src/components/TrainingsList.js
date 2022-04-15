@@ -17,7 +17,6 @@ export default function TrainingsList({ trainings, handleRemove }) {
         </li>)
 
 
-
     return (
         <div className='display'>
             <div className='displayHead'>

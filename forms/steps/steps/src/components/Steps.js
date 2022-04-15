@@ -7,9 +7,11 @@ export default function Steps(props) {
 
     const [trainings, setTrainings] = useState([]);
 
+
     const handleAdd = training => {
-        setTrainings(prevTrainings => [...prevTrainings, training]);
+        setTrainings(prevTrainings => ([...prevTrainings, training]))
     }
+
 
     const handleRemove = id => {
         setTrainings(prevTrainings => prevTrainings.filter(training => training.id !== id));
@@ -17,7 +19,7 @@ export default function Steps(props) {
 
     return (
         <div className='container'>
-            <TrainingsAddForm onAdd= {handleAdd} />
+            <TrainingsAddForm onAdd={handleAdd} />
             <TrainingsList trainings={trainings} handleRemove={handleRemove} />
         </div>
     );
