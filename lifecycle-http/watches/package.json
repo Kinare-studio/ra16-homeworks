@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "moment": "^2.29.3",
+    "react-country-region-selector": "^3.4.0"
+  },
+  "name": "watches",
+  "description": "Мировые часы ===",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
