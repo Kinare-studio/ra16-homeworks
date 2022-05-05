@@ -2,7 +2,7 @@
  * Отображение раздела с новостями
  */
 
-function News(props) {
+export default function News(props) {
     return (
         <section>
         <h></h>
@@ -20,7 +20,7 @@ function News(props) {
  * Отображение навигации по сайту и поисковую строку
  */
 
-function Search(props) {
+ export default function Search(props) {
     return (
         <div>
             <ul>
@@ -41,7 +41,7 @@ function Search(props) {
  * Отображение баннера с рекламой
  */
 
-function Banner(props) {
+ export default function Banner(props) {
     return (
         <div>
             <img src={props.bannerImg} alt={props.bannerAlt} />
@@ -53,7 +53,7 @@ function Banner(props) {
  * Отображение подраздела сайта
  */
 
-function Article(props) {
+ export default function Article(props) {
     return (
         <div>
             <a href={props.titleLink}>{props.title}</a>
@@ -73,7 +73,7 @@ function Article(props) {
  * Отображение блока с подразделами сайта
  */
 
-function Aside() {
+ export default function Aside() {
     return (
         <div>
        <Article titleLink='' title='' img='' alt='' textLink='' text=''/>
@@ -88,7 +88,7 @@ function Aside() {
 /**
  * Отображение сайта
  */
-function App() {
+ export default function App() {
     return (
        <container>
            <News img='' alt='' link='' title=''/>
