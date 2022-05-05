@@ -1,24 +1,35 @@
+/**
+ * Отображение раздела с новостями
+ */
+
 function News(props) {
     return (
+        <section>
+        <h></h>
         <ul>
             <li>
-                <img src={props.img} alt=" " />
-                <h>{props.title}</h>
-                <a href=" ">{props.link}</a>
+                <img src={props.img} alt={props.alt} />
+                <a href={props.link}>{props.title}</a>
             </li>
         </ul>
+        </section>
     )
 }
+
+/**
+ * Отображение навигации по сайту и поисковую строку
+ */
 
 function Search(props) {
     return (
         <div>
-            <ul className='toolBar'>
+            <ul>
                 <li>
-                    <p></p>
+                    <a href={props.link}>{props.name}</a>
                 </li>
             </ul>
             <label>
+                <img src=" " alt=" " />
                 <input type='search'></input>
                 <button>Найти</button>
             </label>
@@ -26,30 +37,64 @@ function Search(props) {
     )
 }
 
+/**
+ * Отображение баннера с рекламой
+ */
+
 function Banner(props) {
     return (
         <div>
-            <img />
+            <img src={props.bannerImg} alt={props.bannerAlt} />
         </div>
     )
 }
 
-function Aside(props) {
+/**
+ * Отображение подраздела сайта
+ */
+
+function Article(props) {
     return (
-        <section class="row">
-            <div class="col-1-2">{props.weather}{props.popular}</div>
-            <div class="col-1-2">{props.map}{props.tvPropramms}</div>
-            <div class="col-1-2">{props.broadcast}</div>
-        </section>
+        <div>
+            <a href={props.titleLink}>{props.title}</a>
+            <div>
+                <img src={props.img} alt={props.alt} />
+                <ul>
+                    <li>
+                    <a href={props.textLink}>{props.text}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     )
 }
 
-function App(props) {
+/**
+ * Отображение блока с подразделами сайта
+ */
+
+function Aside() {
     return (
-        <section class="row">
-            <div class="col-1-2">{props.weather}{props.popular}</div>
-            <div class="col-1-2">{props.map}{props.tvPropramms}</div>
-            <div class="col-1-2">{props.broadcast}</div>
-        </section>
+        <div>
+       <Article titleLink='' title='' img='' alt='' textLink='' text=''/>
+       <Article titleLink='' title='' textLink='' text=''/>
+       <Article titleLink='' title='' textLink='' text=''/>
+       <Article titleLink='' title='' textLink='' text=''/>
+       <Article titleLink='' title='' img='' alt='' textLink='' text=''/>
+        </div>
+    )
+}
+
+/**
+ * Отображение сайта
+ */
+function App() {
+    return (
+       <container>
+           <News img='' alt='' link='' title=''/>
+           <Search link='' name='' />
+           <Banner bannerImg=''  bannerAlt=''/>
+           <Aside/>
+       </container>
     )
 }
