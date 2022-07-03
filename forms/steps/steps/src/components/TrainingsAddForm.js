@@ -17,11 +17,6 @@ export default function TrainingsAddForm(props) {
             ({ ...prevForm, [name]: value}));
     }
 
-    /*function componetDidUpdate(oldProps, oldState) {
-        console.log(
-            {oldProps, oldState}
-        )
-    }*/
 
     const handleSubmit = evt => {
         evt.preventDefault();
@@ -32,6 +27,7 @@ export default function TrainingsAddForm(props) {
             km: '',
         });
     };
+
 
 
     return (

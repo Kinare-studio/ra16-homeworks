@@ -12,8 +12,10 @@ export default function Watches(props) {
         name: '',
         timeZone: '',
     });
+    const t = ['+00:00', '+01:00', '+02:00']
     const [watches, setWatches] = useState([]);
     const [offset, setOffset] = useState(0)
+console.log(offset)
 
     const handleChangeName = evt => {
         const { name, value } = evt.target;
@@ -72,11 +74,9 @@ export default function Watches(props) {
                     <label htmlFor='timeZone'>Временная зона
                         <select type='timeZone' id='timeZone' name='timeZone' className='inputTimeZone' value={form.timeZone} onChange={handleChangeZone} required>
                             <option value=''>--select--</option>
-                            {moment.tz.countries().map(item => 
-                                moment.tz.zonesForCountry(item, true).map(city =>
-                                 <option value={city.offset} key={city.name}>
-                                        {createOffset(city.offset)}
-                                    </option>))}
+                            {t.map(item => <option value={item} key={item.toString()}>
+                                        {createOffset(Number(item))}
+                                    </option>)}
                         </select>
                     </label>
                     <button className='button'>Добавить</button>
