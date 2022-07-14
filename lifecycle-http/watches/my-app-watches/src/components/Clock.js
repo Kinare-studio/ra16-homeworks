@@ -7,10 +7,12 @@ export default class Clock extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            time: this.toOffsetDate(this.props.offset)
+            time: {},
+            secondDegrees: 0,
+            minuteDegrees: 0,
+            hourDegrees: 0
         };
     }
-
 
     componentDidMount() {
         this.interval = setInterval(
@@ -18,23 +20,21 @@ export default class Clock extends React.Component {
             1000);
     }
 
-
     componentWillUnmount() {
         clearInterval(this.interval)
     }
 
-
-    pad(value) {
-        return value < 10 ? '0' + value : value;
-    }
-
-
     toOffsetDate(offset) {
         let d = new Date(new Date().getTime() - (offset * 60 * 1000));
-        let hrs = this.pad(d.getUTCHours());
-        let mins = this.pad(d.getUTCMinutes());
-        let secs = this.pad(d.getUTCSeconds());
-        return `${hrs}:${mins}:${secs}`
+        let hrs = d.getUTCHours() > 12 ? d.getUTCHours() - 12 : d.getUTCHours();
+        let mins = d.getUTCMinutes();
+        let secs = d.getUTCSeconds();
+
+        this.setState({
+            secondDegrees: 360 / 60 * secs + 180,
+            minuteDegrees: 360 / 60 * mins + 6 / 60 * secs + 180,
+            hourDegrees: 360 / 12 * hrs + 30 / 60 * mins + 0.5 / 60 * secs + 180
+        });
     }
 
     tick() {
@@ -44,12 +44,14 @@ export default class Clock extends React.Component {
     }
 
 
-
     render() {
-
         return (
             <div>
-                {this.state.time}
+                <ul id="clock">
+                    <li id="sec" style={{ transform: `rotate(${this.state.secondDegrees}deg)` }}></li>
+                    <li id="hour" style={{ transform: `rotate(${this.state.hourDegrees}deg)` }}></li>
+                    <li id="min" style={{ transform: `rotate(${this.state.minuteDegrees}deg)` }}></li>
+                </ul>
             </div>
         )
     }

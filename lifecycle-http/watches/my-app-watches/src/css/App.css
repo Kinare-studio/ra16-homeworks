@@ -85,8 +85,8 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 170px;
-  height: 170px;
+  width: 140px;
+  height: 140px;
   padding: 5px;
   margin: 0 50px 50px 0;
 }
@@ -112,20 +112,30 @@
   margin-top: 5px;
 }
 
-@keyframes rotate {
-  100% {
-    transform: rotateZ(360deg);
-  }
-}
 
 #clock {
   position: relative;
   width: 80px;
   height: 80px;
   list-style: none;
-  border: solid 1px black;
-  border-radius: 50%;
+  background-color: #fff;
+  background-image: url(https://st.depositphotos.com/2819061/3517/i/450/depositphotos_35178103-stock-photo-watch-face.jpg);
+  background-size: 80px 80px;
 }
+
+#clock::after {
+  background: rgb(0, 0, 0);
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 5%;
+  height: 5%;
+  z-index: 10;
+}
+
 
 #sec,
 #min,
@@ -137,37 +147,31 @@
 
 #sec {
   width: 1px;
-  height: 40px;
-  background-color: red;
+  height: 38px;
+  background-color: rgb(255, 0, 0);
   z-index: 3;
-  transition: 1s;
   transform-origin: left top;
-  animation: rotate 60s infinite steps(60);
 }
 
 
 #min {
-  width: 2px;
+  width: 1.5px;
   height: 30px;
   background-color: black;
   z-index: 2;
-  transition: 2s;
   transform-origin: left top;
-  animation: rotate 3600s infinite steps(60);
 }
 
 #hour {
-  width: 3px;
+  width: 2px;
   height: 20px;
   background-color: black;
   z-index: 1;
   transform-origin: left top;
-  animation: rotate 43200s infinite linear;
 }
 
 .time {
   display: flex;
   justify-content: center;
   margin-top: 10px;
-  border: solid red 1px;
 }
