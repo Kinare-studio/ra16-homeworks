@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  padding: 10px 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.titleApp {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-end;
+  min-width: 720px;
+  width: 100%;
+  padding: 10px 10px;
+
+}
+
+.updateButton {
+  width: 30px;
+  height: 30px;
+  margin: 0 20px;
+  border-radius: 50px;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9cJXO8YnuXPSTLIeQzt6XrBqon70XB6t6Iw&usqp=CAU);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  background-color: black;
+}
+
+.updateButton:hover {
+  opacity: 0.8;
+}
+
+.newNotes {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  width: 290px;
+  height: 150px;
+  padding: 10px 10px;
+}
+
+.container {
+  margin-top: 10px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 270px;
+  height: 100px;
+  border: 1px solid black;
+}
+
+.submitNewNote {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9tZctEl6RxZhgpK94DxRxfigp8cqBzbY7lRCE5fvRffFmE7JiB5ShOazIhozXvOVfdzc&usqp=CAU);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+
+}
+
+.submitNewNote:hover {
+  opacity: 0.6;
+}
+
+.displayData {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.listItem {
+  position: relative;
+  display: flex;
+  list-style-type: none;
+  width: 200px;
+  min-height: 160px;
+  padding: 10px;
+  margin: 10px 20px 20px 0;
+}
+
+.deleteButton {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  background-image: url(https://free-png.ru/wp-content/uploads/2021/06/free-png.ru-38.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: white;
+  border: none;
+}
+
+.deleteButton:hover {
+  background-color: rgb(247, 245, 245);
+}
+
+.card {
+  border: solid black 1px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 170px;
+  min-height: 140px;
+  margin: auto;
+  overflow-block: auto;
+
+}
+
+.content {
+  padding: 5px;
+  font-weight: 300;
+  font-size: small;
+  word-break: break-all;
+  overflow-block: auto;
+}
