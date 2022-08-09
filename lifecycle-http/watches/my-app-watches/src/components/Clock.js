@@ -2,7 +2,6 @@ import React from 'react';
 import '../css/App.css';
 
 
-
 export default class Clock extends React.Component {
     constructor(props) {
         super(props);

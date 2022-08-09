@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import '../css/App.css';
 import { v4 as uuidv4 } from 'uuid'
 import WatchesModel from '../models/WatchesModel';
-//import Clock from './Clock';
 import ClocksAddForm from './ClocksAddForm';
 import ClocksList from './ClocksList';
 
@@ -44,15 +43,15 @@ export default function Watches(props) {
 
     return (
         <div>
-           <ClocksAddForm 
-           handleSubmit={handleSubmit} 
-           handleChangeName={handleChangeName} 
-           handleChangeZone={handleChangeZone}
-           form={form}
-           />
-            <ClocksList 
-            watches={watches} 
-            handleRemove={handleRemove}/>
+            <ClocksAddForm
+                handleSubmit={handleSubmit}
+                handleChangeName={handleChangeName}
+                handleChangeZone={handleChangeZone}
+                form={form}
+            />
+            <ClocksList
+                watches={watches}
+                handleRemove={handleRemove} />
         </div>
     )
 }
